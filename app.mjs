@@ -5,9 +5,15 @@ import morgan from 'morgan';
 import cors from 'cors';
 import resources from "./resources.mjs";
 import bookings from "./bookings.mjs";
+import { connectToDatabase } from "./db/database.mjs";
+
 
 const port = process.env.PORT;
 const app = express();
+
+connectToDatabase().then(() => {
+    app.listen(port, () => console.log(`API listening on port ${port}`));
+});
 
 app.disable('x-powered-by');
 app.set("view engine", "ejs");
@@ -63,8 +69,4 @@ app.post('/bookings', async (req, res) => {
 app.delete('/bookings/:id', async (req, res) => {
     const result = await bookings.deleteOne(req.params.id);
     return res.json(result);
-});
-
-app.listen(port, () => {
-    console.log(`Proxmox Booking app listening on port ${port}`);
 });

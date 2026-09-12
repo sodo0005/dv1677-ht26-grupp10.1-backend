@@ -8,6 +8,7 @@
         <div class="resource-card">
             <h3><a href="/resources/<%= r.id %>"><%= r.name %></a></h3>
             <p class="resource-meta"><%= r.type %> — <%= r.description %></p>
+            <a href="/resources/<%= r.id %>/edit">Uppdatera</a>
         </div>
     <% }); %>
 <%- include('includes/footer'); %>

@@ -1,49 +1,51 @@
-# Proxmox Booking HT26
+# dv1677-ht26-grupp10.1-backend
 
-Starter-repo för DV1677 JavaScript-baserade webbramverk HT26.
+## Gruppmedlemmar
 
-Ett alternativt projekt – ett server-renderat bokningssystem för resurser
-(t.ex. virtuella maskiner i Proxmox), byggt med Express och SQLite. Under
-kursens gång byggs det om/refaktoreras.
+| Namn | GitHub |
+|------|--------|
+| Sophie Truong | @sodo0005 |
 
-## Krav
+## Projektval
 
-> **OBS: Kräver Node.js 22.23 eller högre.**
-> `better-sqlite3` använder nativa binärer kompilerade för en specifik Node-version — äldre 22.x (t.ex. 22.11) ger `Segmentation fault` vid start.
->
-> Uppgradera med nvm:
-> ```bash
-> nvm install 22.23
-> nvm use 22.23
-> ```
+Jag har valt  **bokningssystem**.
 
-## Kom igång
+Motivering: ...
 
-```bash
-npm install
-```
+## Teknikval
 
-Skapa en `.env`-fil utifrån exemplet:
+**Frontend-ramverk:** React
 
-```bash
+Motivering: ...
+
+## Kör lokalt
+
+git clone <repo-url>
+cd dv1677-ht26-grupp5-backend
 cp .env.example .env
-```
-
-Starta applikationen:
-
-```bash
+npm install
 npm start
-```
 
-Öppna sedan `http://localhost:3000`
+**Miljövariabler** (se .env.example):
 
-## Env-variabler
+| Variabel | Beskrivning |
+|----------|-------------|
+| MONGODB_URI | Anslutningssträng till MongoDB |
+| PORT | Port (default 1337) |
 
-`PORT` - porten som Express lyssnar på -> `3000`
+## Tester
 
-## Teknikstack
+npm test
 
-- [Node](https://nodejs.org)
-- [Express](https://expressjs.com)
-- [SQLite](https://www.sqlite.org) (byts ut mot MongoDB)
-- [EJS](https://ejs.co) (byts ut mot frontend-ramverk)
+## Driftsatt
+
+- Backend: https://grupp5.jsramverk.se
+- Frontend: https://grupp5.github.io/dv1677-ht26-grupp5-frontend
+
+## Tillvägagångssätt
+
+Dokumentera löpande vad ni gjort och hur ni löst problem.
+
+- Vecka 1: ...
+- Vecka 2: ...
+- Vecka 3: ...

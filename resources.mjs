@@ -1,4 +1,4 @@
-import db from './db/database.mjs';
+import { db } from './db/database.mjs';
 
 const resources = {
     getAll: async function getAll() {
@@ -18,5 +18,6 @@ const resources = {
         return { changes: result.changes };
     }
 };
+
 
 export default resources;

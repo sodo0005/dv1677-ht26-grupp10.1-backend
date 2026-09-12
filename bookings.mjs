@@ -1,4 +1,4 @@
-import db from './db/database.mjs';
+import { db } from './db/database.mjs';
 
 const bookings = {
     getByResource: async function getByResource(resourceId) {
