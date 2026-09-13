@@ -10,13 +10,13 @@
 
 Jag har valt  **bokningssystem**.
 
-Motivering: ...
+Motivering: Jag har valt bokningsystemet eftersom jag tycker det lät roligast och också eftersom jag har tänkt bygga en liknande applikation på fritiden. Så det passade väldigt bra att jag kommer lära mig hur man gör det i den här kursen.
 
 ## Teknikval
 
 **Frontend-ramverk:** React
 
-Motivering: ...
+Motivering: Jag har valt frontend-ramverket React eftersom jag har jobbat lite med det tidigare, så det är inte helt nytt för mig och det känns bra då jag jobbar själv i gruppen. React är också ett ramverk som har hög efterfrågan på arbetsmarknaden därför känns det väldigt naturligt att bygga projektet med React.
 
 ## Kör lokalt
 
@@ -46,6 +46,6 @@ npm test
 
 Dokumentera löpande vad ni gjort och hur ni löst problem.
 
-- Vecka 1: ...
-- Vecka 2: ...
+- Vecka 1: Laddat ner exempelrepot och försökt studera hur det är uppbyggt samt val av ramverket React och resource-booking projektet.
+- Vecka 2: Påböjat migreringen till MongoDB samt fixa funktionaliteten att kunna uppdatera en resurs eller bokning.
 - Vecka 3: ...
