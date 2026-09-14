@@ -28,6 +28,19 @@ const resources = {
         _id: new ObjectId(id)
     });
     return { changes: result.deletedCount };
+    },
+     //Uppdatera resource
+    updateOne: async function updateOne(id, body) {
+    const result = await db.collection("resources").updateOne({
+        _id: new ObjectId(id)
+    }, { $set: {
+            name: body.name,
+            type: body.type,
+            description: body.description,
+            capacity: body.capacity
+        }}
+    );
+    return { changes: result.modifiedCount };
     }
 };
 

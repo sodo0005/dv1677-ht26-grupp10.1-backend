@@ -59,6 +59,11 @@ app.delete('/resources/:id', async (req, res) => {
     return res.json(result);
 });
 
+app.put('/resources/:id', async (req, res) => {
+    await resources.updateOne(req.params.id, req.body);
+    return res.redirect(`/resources/${req.params.id}`);
+});
+
 // --- Bokningar ---
 
 app.post('/bookings', async (req, res) => {
