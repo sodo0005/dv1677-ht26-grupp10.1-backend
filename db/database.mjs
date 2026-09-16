@@ -5,7 +5,7 @@ let db;
 
 async function connectToDatabase() {
     await client.connect();
-    db = client.db(process.env.DB_NAME);
+    db = client.db(process.env.DATABASE_NAME);
     console.log("Connected to MongoDB");
 }
 
