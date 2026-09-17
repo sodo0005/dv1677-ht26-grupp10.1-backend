@@ -1,49 +1,48 @@
-# Proxmox Booking HT26
+# dv1677-ht26-grupp10.1-backend
 
-Starter-repo för DV1677 JavaScript-baserade webbramverk HT26.
+## Gruppmedlemmar
 
-Ett alternativt projekt – ett server-renderat bokningssystem för resurser
-(t.ex. virtuella maskiner i Proxmox), byggt med Express och SQLite. Under
-kursens gång byggs det om/refaktoreras.
+| Namn          | GitHub    |
+|---------------|-----------|
+| Sophie Truong | @sodo0005 |
 
-## Krav
+## Projektval
 
-> **OBS: Kräver Node.js 22.23 eller högre.**
-> `better-sqlite3` använder nativa binärer kompilerade för en specifik Node-version — äldre 22.x (t.ex. 22.11) ger `Segmentation fault` vid start.
->
-> Uppgradera med nvm:
-> ```bash
-> nvm install 22.23
-> nvm use 22.23
-> ```
+Jag har valt  **bokningssystem**.
 
-## Kom igång
+Motivering: Jag har valt bokningsystemet eftersom jag tycker det verkar roligast och också eftersom jag har tänkt bygga en liknande applikation på fritiden. Så det passade väldigt bra att jag kommer lära mig hur man gör det i den här kursen.
 
-```bash
-npm install
-```
+## Teknikval
 
-Skapa en `.env`-fil utifrån exemplet:
+**Frontend-ramverk:** React
 
-```bash
+Motivering: Jag har valt frontend-ramverket React eftersom jag har jobbat lite med det tidigare, så det är inte helt nytt för mig och det känns bra då jag jobbar själv i gruppen. React är också ett ramverk som har hög efterfrågan på arbetsmarknaden därför känns det väldigt naturligt att bygga projektet med React.
+
+## Kör lokalt
+
+git clone <repo-url>
+cd dv1677-ht26-grupp10.1-backend
 cp .env.example .env
-```
-
-Starta applikationen:
-
-```bash
+npm install
 npm start
-```
 
-Öppna sedan `http://localhost:3000`
+**Miljövariabler** (se .env.example):
 
-## Env-variabler
+| Variabel | Beskrivning |
+|----------|-------------|
+| MONGODB_URI | Anslutningssträng till MongoDB |
+| PORT | Port |
+| DATABASE_NAME | Namn på MongoDB Databas |
 
-`PORT` - porten som Express lyssnar på -> `3000`
 
-## Teknikstack
+## Tester
 
-- [Node](https://nodejs.org)
-- [Express](https://expressjs.com)
-- [SQLite](https://www.sqlite.org) (byts ut mot MongoDB)
-- [EJS](https://ejs.co) (byts ut mot frontend-ramverk)
+npm test
+
+## Tillvägagångssätt
+
+Dokumentera löpande vad ni gjort och hur ni löst problem.
+
+- Vecka 1: Laddat ner exempelrepot och försökt studera hur det är uppbyggt samt val av ramverket React och resource-booking projektet.
+- Vecka 2: Påbörjat migreringen till MongoDB samt verifiera med curl att uppdatering av resurs fungerar.
+- Vecka 3: ...

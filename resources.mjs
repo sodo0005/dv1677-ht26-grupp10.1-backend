@@ -1,22 +1,48 @@
-import db from './db/database.mjs';
+import { db } from './db/database.mjs';
+import { ObjectId } from 'mongodb';
 
 const resources = {
+    //Hämtar alla resources
     getAll: async function getAll() {
-        return db.prepare('SELECT * FROM resources').all();
+        return await db.collection("resources").find({}).toArray();
     },
+    //Hämtar vald resource
     getOne: async function getOne(id) {
-        return db.prepare('SELECT * FROM resources WHERE id = ?').get(id) || {};
+    return await db.collection("resources").findOne({
+        _id: new ObjectId(id)
+    }) || {};
     },
+    //Lägger till en resource
     addOne: async function addOne(body) {
-        const result = db.prepare(
-            'INSERT INTO resources (name, type, description, capacity) VALUES (?, ?, ?, ?)'
-        ).run(body.name, body.type, body.description, body.capacity || 1);
-        return { lastID: result.lastInsertRowid };
+    const result = await db.collection("resources").insertOne({
+        name: body.name,
+        type: body.type,
+        description: body.description,
+        capacity: body.capacity || 1
+    });
+    return { lastID: result.insertedId };
     },
+    //Tar bort resource
     deleteOne: async function deleteOne(id) {
-        const result = db.prepare('DELETE FROM resources WHERE id = ?').run(id);
-        return { changes: result.changes };
+    const result = await db.collection("resources").deleteOne({
+        _id: new ObjectId(id)
+    });
+    return { changes: result.deletedCount };
+    },
+     //Uppdatera resource
+    updateOne: async function updateOne(id, body) {
+    const result = await db.collection("resources").updateOne({
+        _id: new ObjectId(id)
+    }, { $set: {
+            name: body.name,
+            type: body.type,
+            description: body.description,
+            capacity: body.capacity
+        }}
+    );
+    return { changes: result.modifiedCount };
     }
 };
+
 
 export default resources;
